@@ -13,14 +13,11 @@ class FileController extends Controller
     {
 
         $files = File::all();
-        $uploads = Upload::all();
-
-        return view('files.index', compact('files', 'uploads'));
+        return view('files.index', ['file' => $files] );
     }
 
     public function store(Request $request)
     {
-        dd($request);
         $path = $request->filename->store('public');
 
 
@@ -51,13 +48,13 @@ class FileController extends Controller
     {
 
         $files = File::all();
-        return view('files.update',compact('files'));
+        return view('file.update',compact('files'));
     }
 
     public function edit($id)
     {
         $files = File::find($id);
-        return view("files.update", ['file' => $files]);
+        return view("file.update", ['file' => $files]);
 
     }
 
