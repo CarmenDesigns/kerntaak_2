@@ -12,4 +12,8 @@ class File extends Model
     public function user(){
         return $this->belongsTo(User::class);
     }
+
+    public function uploads(){
+        return $this->hasOne(Upload::class);
+    }
 }
