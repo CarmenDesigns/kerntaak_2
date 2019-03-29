@@ -17,7 +17,7 @@
             <input type="text" name="subject" id="subject" value="{{$file->subject}}"><br><br>
             <input type="text" name="year" id="year" value="{{$file->year}}"><br><br>
             <input type="text" name="level" id="level" value="{{$file->level}}"><br><br>
-            <input type="submit" class="update" value="Update" onclick="return confirm('Are you sure you want to update?')">
+            <input type="submit" class="update" value="Update">
 
         </div>
 

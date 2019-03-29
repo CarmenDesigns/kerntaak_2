@@ -6,8 +6,12 @@ use Illuminate\Database\Eloquent\Model;
 
 class Upload extends Model
 {
+
+    //The fillable property defines which attributes may be assignable.
     protected $fillable = ['fillable'];
 
+
+    //The relationships between upload and user and upload and file are defined here.
 
     public function user()
     {
@@ -19,6 +23,8 @@ class Upload extends Model
     {
         return $this->hasOne(Upload::class);
     }
+
+    //This function is used to delete an uploaded file.
 
     public static function boot()
     {

@@ -37,6 +37,9 @@ class User extends Authenticatable
         'email_verified_at' => 'datetime',
     ];
 
+
+    //The relationships between user and file and user and upload are defined here.
+
     public function files(){
         return $this->hasMany(File::class);
     }

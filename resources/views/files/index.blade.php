@@ -37,17 +37,17 @@
                     <form method="POST" action="{{ route('files.destroy', ['id' => $file->id]) }}">
                         @csrf
                         <input name="_method" type="hidden" value="DELETE">
-                        <button type="submit">Delete</button>
+                        <button type="submit" onclick="return confirm('Are you sure you want to delete this file?')">Delete</button>
                     </form>
                 </th>
             </tr>
-            @if(session()->get('message'))
-                <div class="alert alert-success">
-                    {{ session()->get('message') }}
-                </div>
-            @endif
-        @endforeach
 
+        @endforeach
+        @if(session()->get('success'))
+            <div class="alert alert-success">
+                {{ session()->get('success') }}
+            </div>
+        @endif
         </tbody>
         </table>
 
