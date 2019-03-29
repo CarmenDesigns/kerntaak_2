@@ -13,7 +13,9 @@ class FileController extends Controller
     {
 
         $files = File::all();
-        return view('files.index', ['file' => $files] );
+        $uploads = Upload::all();
+
+        return view('files.index', compact('files', 'uploads'));
     }
 
     public function store(Request $request)
@@ -48,31 +50,30 @@ class FileController extends Controller
     {
 
         $files = File::all();
-        return view('file.update',compact('files'));
+        return view('files.update',compact('files'));
     }
 
     public function edit($id)
     {
+
         $files = File::find($id);
-        return view("file.update", ['file' => $files]);
+        return view("files.update", ['file' => $files]);
 
     }
 
     public function update(Request $request,$id)
     {
 
-
         $files = File::find($id);
-        $files -> update($request->all());
-        return redirect()->route('files.index');
-
+        $files->update($request->all());
+        return redirect()->route('files.index')->with('message', 'Update successful');
     }
 
 
     public function destroy($id){
 
         File::find($id)->delete();
-        return redirect()->route('files.index')->with('success', 'File has been deleted');
+        return redirect()->route('files.index')->with('message', 'File has been deleted');
     }
 }
 
