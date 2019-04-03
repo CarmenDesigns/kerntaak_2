@@ -1,10 +1,10 @@
 <?php
 
-namespace App\Http\Controllers;
+namespace kerntaak_2\Http\Controllers;
 
 use Illuminate\Http\Request;
-use App\File;
-use App\Upload;
+use kerntaak_2\File;
+use kerntaak_2\Upload;
 use Illuminate\Support\Facades\Storage;
 
 class FileController extends Controller
@@ -30,10 +30,10 @@ class FileController extends Controller
         $request->validate([
             'subject' => 'required',
             'year' => 'required|numeric',
-            'level' => 'required'
+            'level' => 'required',
+
+
         ]);
-
-
 
         //A file can be uploaded by an authenticated user.
 
@@ -41,9 +41,9 @@ class FileController extends Controller
             'subject' => $request->get('subject'),
             'year' => $request->get('year'),
             'level' => $request->get('level'),
-            'filename'=>$request->get('filename')
-        ]);
 
+
+        ]);
 
         //The object Upload is defined, given a path, associated with the user and finally saved in the database.
 
@@ -72,9 +72,7 @@ class FileController extends Controller
 
         $files = File::find($id);
         return view("files.update", ['file' => $files]);
-
     }
-
 
     //Update the specified file
 
@@ -90,7 +88,6 @@ class FileController extends Controller
     public function destroy($id){
 
         File::find($id)->delete();
-
         return redirect()->route('files.index')->with('message', 'File has been deleted');
     }
 }

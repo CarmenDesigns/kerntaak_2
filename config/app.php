@@ -13,7 +13,7 @@ return [
     |
     */
 
-    'name' => env('APP_NAME', 'Laravel'),
+    'name' => env('APP_NAME', 'kerntaak_2'),
 
     /*
     |--------------------------------------------------------------------------
@@ -170,11 +170,11 @@ return [
         /*
          * Application Service Providers...
          */
-        App\Providers\AppServiceProvider::class,
-        App\Providers\AuthServiceProvider::class,
-        // App\Providers\BroadcastServiceProvider::class,
-        App\Providers\EventServiceProvider::class,
-        App\Providers\RouteServiceProvider::class,
+        kerntaak_2\Providers\AppServiceProvider::class,
+        kerntaak_2\Providers\AuthServiceProvider::class,
+        // kerntaak_2\Providers\BroadcastServiceProvider::class,
+        kerntaak_2\Providers\EventServiceProvider::class,
+        kerntaak_2\Providers\RouteServiceProvider::class,
 
     ],
 

@@ -1,6 +1,6 @@
 <?php
 
-namespace App;
+namespace kerntaak_2;
 
 use Illuminate\Database\Eloquent\Model;
 

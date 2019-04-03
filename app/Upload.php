@@ -1,6 +1,6 @@
 <?php
 
-namespace App;
+namespace kerntaak_2;
 
 use Illuminate\Database\Eloquent\Model;
 
@@ -19,9 +19,9 @@ class Upload extends Model
     }
 
 
-    public function upload()
+    public function file()
     {
-        return $this->hasOne(Upload::class);
+        return $this->belongsTo(File::class);
     }
 
     //This function is used to delete an uploaded file.
