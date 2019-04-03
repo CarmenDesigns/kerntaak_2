@@ -41,7 +41,7 @@
                 <th>
 
                     {{--This form is used for the delete function.--}}
-                    <form method="POST" action="{{ route('files.destroy', ['id'=>$file->id]) }}">
+                    <form method="POST" action="{{ route('files.destroy', ['id'=>$file->id])git }}">
                         @csrf
                         <input name="_method" type="hidden" value="DELETE">
                         <button type="button" class="btn btn-primary" data-toggle="modal" data-target="#exampleModal">

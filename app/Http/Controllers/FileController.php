@@ -71,7 +71,7 @@ class FileController extends Controller
     {
 
         $files = File::find($id);
-        return view("files.update", ['file' => $files]);
+        return view("files.update",compact($files));
     }
 
     //Update the specified file
