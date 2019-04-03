@@ -8,7 +8,7 @@
                 <div class="card">
                     <div class="card-header">File Upload</div>
                     <div class="card-body">
-                        <form method="POST" action="{{ route('file.upload') }}" aria-label="{{ __('Upload') }}" enctype="multipart\form-data">
+                        <form method="POST" action="{{ route('file.upload') }}" aria-label="{{ __('Upload') }}" enctype="multipart/form-data">
 
                             @csrf
                             <label for="exampleFormControlFile1">Upload your file</label>
